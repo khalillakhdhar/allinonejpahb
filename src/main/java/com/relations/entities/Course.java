@@ -15,9 +15,7 @@ import lombok.Data;
 @Data
 public class Course extends Audit {
 	private String courseName;
-	@OneToOne
-	@JsonManagedReference
-	private Student student;
+	
 	@ManyToMany(mappedBy = "courses")
 	@JsonBackReference
 	private Set<Student> students = new HashSet<>();

@@ -21,8 +21,7 @@ import lombok.Data;
 @Data
 public class Student  extends Audit{
 	private String name;
-	@OneToOne
-	@JoinColumn(name = "address_id")
+	@OneToOne(mappedBy = "student")
 	private Adress address;
 	
 	@ManyToMany
